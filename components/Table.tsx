@@ -22,7 +22,7 @@ const Table = () => {
       negativeText: 'Tidak',
       async onPositiveClick() {
         try {
-          await axios.delete(`http://localhost:3000/api/votes/${id}`);
+          await axios.delete(`https://lets-votely.vercel.app/api/votes/${id}`);
           toast.success('Voting berhasil dihapus!', {
             position: 'top-right',
             autoClose: 3000,
@@ -54,7 +54,7 @@ const Table = () => {
   const getVotes = async () => {
     setLoading(true);
     try {
-      const result = await axios.get(`http://localhost:3000/api/votes`);
+      const result = await axios.get(`https://lets-votely.vercel.app/api/votes`);
       setVotes(result.data.result);
     } catch (error: any) {
       console.log(error.message);

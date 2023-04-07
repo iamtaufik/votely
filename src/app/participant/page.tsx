@@ -15,7 +15,7 @@ const Participant = () => {
     e.preventDefault();
     setLoading(true);
     try {
-      await axios.get(`http://localhost:3000/api/votes/${code}`);
+      await axios.get(`https://lets-votely.vercel.app/api/votes/${code}`);
 
       router.push(`/participant/${code}`);
     } catch (error: any) {

@@ -33,7 +33,7 @@ const Page = ({ params }: { params: { code: string } }) => {
 
   const getVote = async (code: string) => {
     try {
-      const { data } = await axios.get(`http://localhost:3000/api/votes/${code}`);
+      const { data } = await axios.get(`https://lets-votely.vercel.app/api/votes/${code}`);
       setVote(data.result);
     } catch (error: any) {
       if (error.response?.data.code === 404) {
@@ -45,7 +45,7 @@ const Page = ({ params }: { params: { code: string } }) => {
 
   const getParticipantVote = async (code: string) => {
     try {
-      const { data } = await axios.get(`http://localhost:3000/api/participant/${code}`);
+      const { data } = await axios.get(`https://lets-votely.vercel.app/api/participant/${code}`);
       console.log(data.result);
       if (!data.result) return setIsVote(false);
       setIsVote(true);
@@ -71,7 +71,7 @@ const Page = ({ params }: { params: { code: string } }) => {
       return;
     }
     try {
-      await axios.post(`http://localhost:3000/api/participant`, {
+      await axios.post(`https://lets-votely.vercel.app/api/participant`, {
         candidate: selectedOption,
         code: code,
       });

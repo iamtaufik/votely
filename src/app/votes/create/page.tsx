@@ -95,7 +95,7 @@ const Create = () => {
     }
 
     try {
-      await axios.post(`http://localhost:3000/api/votes`, {
+      await axios.post(`https://lets-votely.vercel.app/api/votes`, {
         title,
         startDateTime,
         endDateTime,
