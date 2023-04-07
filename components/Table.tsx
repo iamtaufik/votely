@@ -96,7 +96,7 @@ const Table = () => {
             <tbody>
               {votes.length === 0 && <tr>belum ada data</tr>}
               {votes.map((vote, index) => (
-                <tr className="bg-white border-b hover:bg-gray-50 ">
+                <tr className="bg-white border-b hover:bg-gray-50 " key={index}>
                   <td className="w-4 p-4 text-center">{index + 1}</td>
                   <td className="px-6 py-4 text-center">{vote.title}</td>
                   <th scope="row" className="px-6 py-4 font-medium text-center text-gray-900 whitespace-nowrap dark:text-white">
