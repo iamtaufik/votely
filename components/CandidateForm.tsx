@@ -22,7 +22,7 @@ export default function CandidateForm(props: Props) {
   }, [candidate]);
 
   return (
-    <div className="flex flex-row w-1/4 gap-2 p-5 border shadow-md border-zinc-100 shadow-zinc-100">
+    <div className="flex flex-row w-3/4 gap-2 p-5 border shadow-md lg:w-1/4 border-zinc-100 shadow-zinc-100">
       <div className="self-start order-3">
         <div className="w-6 h-6 cursor-pointer hover:bg-zinc-100 text-zinc-300" onClick={() => props.removeCandidateForm(candidate.key)}>
           X
