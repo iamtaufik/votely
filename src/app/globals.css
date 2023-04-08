@@ -2,6 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
+body {
   --toastify-color-success: #4a1b9d;
 }
