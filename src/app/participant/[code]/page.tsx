@@ -26,7 +26,7 @@ const Page = ({ params }: { params: { code: string } }) => {
   const { data: session } = useSession();
 
   if (session === null) {
-    return <Restricted />;
+    router.push('/login');
   }
   const handleOptionChange = (candidate: string) => {
     setSelectedOption(candidate);
@@ -113,8 +113,12 @@ const Page = ({ params }: { params: { code: string } }) => {
       }, 1000);
 
       return () => clearInterval(interval);
+    } else {
+      return;
     }
   }, [vote]);
+
+  // if (!vote) return <div>a</div>;
 
   useEffect(() => {
     getVote(String(code));
