@@ -9,6 +9,7 @@ import SkeletonVote from '@/components/SkeletonVote';
 import { useSession } from 'next-auth/react';
 import { Vote } from '@/types/vote';
 import Navbar from '@/components/Navbar';
+import Restricted from '@/components/Restricted';
 
 const STATE_NOT_STARTED = 'STATE_NOT_STARTED',
   STATE_STARTED = 'STATE_STARTED',
@@ -25,7 +26,7 @@ const Page = ({ params }: { params: { code: string } }) => {
   const { data: session } = useSession();
 
   if (session === null) {
-    router.push('/');
+    return <Restricted />;
   }
   const handleOptionChange = (candidate: string) => {
     setSelectedOption(candidate);
@@ -33,7 +34,7 @@ const Page = ({ params }: { params: { code: string } }) => {
 
   const getVote = async (code: string) => {
     try {
-      const { data } = await axios.get(`https://lets-votely.vercel.app/api/votes/${code}`);
+      const { data } = await axios.get(`${process.env.NODE_ENV !== 'development' ? 'https://lets-votely.vercel.app' : 'http://localhost:3000'}/api/votes/${code}`);
       setVote(data.result);
     } catch (error: any) {
       if (error.response?.data.code === 404) {
@@ -45,7 +46,7 @@ const Page = ({ params }: { params: { code: string } }) => {
 
   const getParticipantVote = async (code: string) => {
     try {
-      const { data } = await axios.get(`https://lets-votely.vercel.app/api/participant/${code}`);
+      const { data } = await axios.get(`${process.env.NODE_ENV !== 'development' ? 'https://lets-votely.vercel.app' : 'http://localhost:3000'}/api/participant/${code}`);
       console.log(data.result);
       if (!data.result) return setIsVote(false);
       setIsVote(true);
@@ -71,7 +72,7 @@ const Page = ({ params }: { params: { code: string } }) => {
       return;
     }
     try {
-      await axios.post(`https://lets-votely.vercel.app/api/participant`, {
+      await axios.post(`${process.env.NODE_ENV !== 'development' ? 'https://lets-votely.vercel.app' : 'http://localhost:3000'}/api/participant`, {
         candidate: selectedOption,
         code: code,
       });

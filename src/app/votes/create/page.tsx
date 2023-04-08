@@ -9,6 +9,8 @@ import { Candidate } from '@/types/candidate';
 import { toast } from 'react-toastify';
 import { useRouter } from 'next/navigation';
 import Navbar from '@/components/Navbar';
+import { useSession } from 'next-auth/react';
+import Restricted from '@/components/Restricted';
 registerLocale('id', id);
 
 const Create = () => {
@@ -17,6 +19,12 @@ const Create = () => {
   const [endDateTime, setendDateTime] = useState<Date>(new Date());
   const [candidates, setCandidates] = useState<Candidate[]>([]);
   const router = useRouter();
+  const { data: session } = useSession();
+
+  if (session === null) {
+    return <Restricted />;
+  }
+
   const addCandidateForm = () => {
     const newCandidate: Candidate = {
       name: '',
@@ -95,7 +103,7 @@ const Create = () => {
     }
 
     try {
-      await axios.post(`https://lets-votely.vercel.app/api/votes`, {
+      await axios.post(`${process.env.NODE_ENV !== 'development' ? 'https://lets-votely.vercel.app' : 'http://localhost:3000'}/api/votes`, {
         title,
         startDateTime,
         endDateTime,
@@ -162,7 +170,7 @@ const Create = () => {
             </div>
             <div>
               <h2>List Kandidat</h2>
-              <div className={`flex ${candidates.length > 0 ? 'justify-center' : ''} gap-8 flex-wrap`}>
+              <div className={`flex ${candidates.length > 0 ? 'justify-center' : ''} gap-8 flex-col lg:flex-row items-center flex-wrap`}>
                 {candidates.map((candidate, index) => (
                   <CandidateForm key={index} candidate={candidate} submitCandidate={submitCandidate} removeCandidateForm={removeCandidateForm} />
                 ))}

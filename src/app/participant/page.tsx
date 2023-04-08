@@ -1,5 +1,7 @@
 'use client';
+import Restricted from '@/components/Restricted';
 import axios from 'axios';
+import { useSession } from 'next-auth/react';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import { FormEvent, useState } from 'react';
@@ -10,12 +12,17 @@ const Participant = () => {
   const [code, setCode] = useState<string>('');
   const router = useRouter();
   const [loading, setLoading] = useState<boolean>(false);
+  const { data: session } = useSession();
+
+  if (session === null) {
+    return <Restricted />;
+  }
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setLoading(true);
     try {
-      await axios.get(`https://lets-votely.vercel.app/api/votes/${code}`);
+      await axios.get(`${process.env.NODE_ENV !== 'development' ? 'https://lets-votely.vercel.app' : 'http://localhost:3000'}/api/votes/${code}`);
 
       router.push(`/participant/${code}`);
     } catch (error: any) {
