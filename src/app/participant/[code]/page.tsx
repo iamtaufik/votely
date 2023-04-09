@@ -167,7 +167,7 @@ const Page = ({ params }: { params: { code: string } }) => {
                     </div>
                   </div>
                 ))}
-                {session?.user?.email !== vote?.publisher && !isVote && currentState !== STATE_ENDED && (
+                {session?.user?.email !== vote?.publisher && !isVote && currentState !== STATE_ENDED && currentState !== STATE_NOT_STARTED && (
                   <button type="submit" className="bg-[#4A1B9D] px-4 py-2 rounded-sm text-white text-base font-semibold">
                     Kirim
                   </button>

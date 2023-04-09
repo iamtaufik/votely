@@ -29,9 +29,9 @@ export default function CandidateForm(props: Props) {
         </div>
       </div>
       <h1 className="flex items-center self-center justify-center order-1 w-1/2 text-4xl text-center rounded-full bg-zinc-100 aspect-square">{props.candidate.key}</h1>
-      <div className="order-2 w-1/2">
+      <div className="order-2 w-1/2 ">
         <label className="mt-3 mb-1 text-sm">Nama Kandidat</label>
-        <input type="text" className="w-3" onChange={(e) => setCandidate({ ...candidate, name: e.target.value })} placeholder="Nama Kandidat" />
+        <input type="text" className="w-full py-1" onChange={(e) => setCandidate({ ...candidate, name: e.target.value })} placeholder="Nama Kandidat" />
       </div>
     </div>
   );
