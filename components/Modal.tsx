@@ -13,12 +13,12 @@ interface IModal {
 const Modal = (props: IModal) => {
   const [isOpen, setIsOpen] = useState(props.isOpen);
   return (
-    <div className={`relative z-10 ${!isOpen && 'hidden'}`} aria-labelledby="modal-title" role="dialog" aria-modal="true">
-      <div className="fixed inset-0 bg-zinc-900 bg-opacity-40 transition-opacity"></div>
+    <div className={`relative z-10 ${!isOpen && 'hidden'} `} aria-labelledby="modal-title" role="dialog" aria-modal="true">
+      <div className="fixed inset-0 transition-opacity bg-zinc-900 bg-opacity-40"></div>
 
       <div className="fixed inset-0 z-10 overflow-y-auto">
-        <div className="flex min-h-full items-end justify-center text-center sm:items-center sm:p-0">
-          <div className="relative transform overflow-hidden bg-white text-left shadow-xl transition-all p-4 rounded-md">
+        <div className="flex items-center justify-center min-h-full text-center sm:items-center sm:p-0">
+          <div className="relative p-4 overflow-hidden text-left transition-all transform bg-white rounded-md shadow-xl">
             {/* Content */}
             <div className="w-full p-5 text-center">
               <p className="text-2xl font-bold text-[#4A1B9D]">{props.title || 'Title'}</p>
