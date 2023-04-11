@@ -138,38 +138,43 @@ const Create = () => {
   return (
     <>
       <Navbar />
-      <div>
-        <h1>Buat Vote baru</h1>
-        <form onSubmit={handleSubmit}>
-          <div>
-            <h2>Judul: </h2>
-            <input type="text" placeholder="Pemilihan ketua kelas" onChange={(e) => setTitle(e.target.value)} />
+      <div className="w-full">
+        <h1 className="text-xl font-normal lg:text-2xl">Buat Vote Baru</h1>
+        <p className="text-sm lg:text-base">Untuk membuat voting baru mengharuskan mengisi kotak dibawah ini</p>
+        <form onSubmit={handleSubmit} className="w-full">
+          <div className="w-full my-4">
+            <h2 className="text-base font-normal lg:text-lg">Judul: </h2>
+            <input className="w-full border-2 rounded-md py-2 px-4 border-[#4A1B9D]" type="text" placeholder="Pemilihan ketua kelas" onChange={(e) => setTitle(e.target.value)} />
           </div>
           <div>
-            <h2>Kapan dimulai</h2>
-            <div>
-              <ReactDatePicker
-                locale={'id'}
-                showTimeSelect
-                dateFormat="Pp"
-                selected={startDateTime}
-                minDate={new Date()}
-                onChange={(date) => date && setstartDateTime(date)}
-                className="w-full px-3 py-2 border border-transparent bg-zinc-100"
-              />
-              <span>sampai</span>
-              <ReactDatePicker
-                locale={'id'}
-                dateFormat="Pp"
-                showTimeSelect
-                selected={endDateTime}
-                minDate={startDateTime}
-                onChange={(date) => date && setendDateTime(date)}
-                className="w-full px-3 py-2 border border-transparent bg-zinc-100"
-              />
+            <div className="flex space-x-10 lg:w-1/3">
+              <div className="lg:w-1/2">
+                <h2 className="text-base font-normal lg:text-lg">Kapan dimulai</h2>
+                <ReactDatePicker
+                  locale={'id'}
+                  showTimeSelect
+                  dateFormat="Pp"
+                  selected={startDateTime}
+                  minDate={new Date()}
+                  onChange={(date) => date && setstartDateTime(date)}
+                  className="w-full rounded-md px-3 py-2 border-2 border-[#4A1B9D] "
+                />
+              </div>
+              <div className="lg:w-1/2">
+                <h2 className="text-base font-normal lg:text-lg">Sampai</h2>
+                <ReactDatePicker
+                  locale={'id'}
+                  dateFormat="Pp"
+                  showTimeSelect
+                  selected={endDateTime}
+                  minDate={startDateTime}
+                  onChange={(date) => date && setendDateTime(date)}
+                  className="w-full rounded-md px-3 py-2 border-2 border-[#4A1B9D] "
+                />
+              </div>
             </div>
-            <div>
-              <h2>List Kandidat</h2>
+            <div className="my-4 ">
+              <h2 className="text-base font-normal lg:text-lg">List Kandidat</h2>
               <div className={`flex ${candidates.length > 0 ? 'justify-center' : ''} gap-8 flex-col lg:flex-row items-center flex-wrap`}>
                 {candidates.map((candidate, index) => (
                   <CandidateForm key={index} candidate={candidate} submitCandidate={submitCandidate} removeCandidateForm={removeCandidateForm} />
