@@ -26,7 +26,6 @@ export const GET = async (req: NextRequest, context: { params: { code: string } 
         deletedAt: null,
       },
     });
-    console.log(vote);
     if (vote === null) return NextResponse.json({ message: 'Voting tidak ditemukan.' }, { status: 404 });
 
     const participants = await prisma.participant.findMany({
