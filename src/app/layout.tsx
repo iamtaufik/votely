@@ -6,7 +6,7 @@ import { SessionProvider } from 'next-auth/react';
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="id">
       <body>
         <SessionProvider>
           <div className="container bg-white">{children}</div>

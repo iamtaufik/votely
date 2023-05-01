@@ -3,6 +3,15 @@ import Link from 'next/link';
 import Navbar from '@/components/Navbar';
 import Table from '@/components/Table';
 import votingBg from '@/assets/voting-bg.svg';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Votely: Sistem E-Voting Terpercaya untuk Pemilihan yang Adil dan Transparan',
+  description: 'Selamat datang di Votely - sistem e-voting terpercaya untuk pemilihan yang adil dan transparan. Gunakan Votely untuk memilih secara online dan pastikan suara Anda dihitung dengan akurat dan aman.',
+  keywords: ['votely', 'e-voting', 'pemilihan', 'suara', 'transparan', 'akurat', 'aman', 'terpercaya'],
+  authors: [{ name: 'Votely Team' }],
+  robots: 'index, follow',
+};
 
 export default function Home() {
   return (
