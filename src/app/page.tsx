@@ -11,6 +11,9 @@ export const metadata: Metadata = {
   keywords: ['votely', 'e-voting', 'pemilihan', 'suara', 'transparan', 'akurat', 'aman', 'terpercaya'],
   authors: [{ name: 'Votely Team' }],
   robots: 'index, follow',
+  themeColor: { color: '#FFF' },
+  manifest: '/manifest.json',
+  icons: { icon: '/icon-192x192.png', apple: "'https://lets-votely.vercel.app/icon-192x192.png'" },
 };
 
 export default function Home() {
