@@ -64,7 +64,9 @@ const Table = () => {
   };
 
   useEffect(() => {
-    getVotes();
+    if (session?.user) {
+      getVotes();
+    }
   }, []);
   return (
     <>
