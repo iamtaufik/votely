@@ -2,6 +2,7 @@ import taufik from '@/assets/taufik.png';
 import RapoL from '@/assets/RapoL.png';
 import Alfa from '@/assets/Alfa.png';
 import Irvan from '@/assets/Irvan.png';
+import Naufal from '@/assets/Naufal.png';
 import Image from 'next/image';
 
 const AboutUs = () => {
@@ -16,6 +17,7 @@ const AboutUs = () => {
           <Image src={RapoL} alt="Raffa Nur Listiawan D E S" className="max-w-2xl mx-auto " />
           <Image src={Alfa} alt="Alfa Zidan Prasetyo" className="max-w-2xl mx-auto " />
           <Image src={Irvan} alt="Muhammadiyah Irvan Shandika" className="max-w-2xl mx-auto " />
+          <Image src={Naufal} alt="Naufal Richo Giffari Saputra" className="max-w-2xl mx-auto " />
         </div>
       </div>
     </div>
