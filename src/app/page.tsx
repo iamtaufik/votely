@@ -5,6 +5,7 @@ import Table from '@/components/Table';
 import votingBg from '@/assets/voting-bg.svg';
 import { Metadata } from 'next';
 import AboutUs from '@/components/AboutUs';
+import Footer from '@/components/Footer';
 
 export const metadata: Metadata = {
   title: 'Votely: Sistem E-Voting Terpercaya untuk Pemilihan yang Adil dan Transparan',
@@ -39,7 +40,7 @@ export default function Home() {
         <p>atau</p>
         <Link href="/participant" className="bg-white py-2 px-6 border-[#4A1B9D] border-2 rounded-sm">
           Ikut Voting
-        </Link> 
+        </Link>
       </div>
       <Table />
       <AboutUs />
