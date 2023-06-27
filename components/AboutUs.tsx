@@ -9,7 +9,7 @@ import Image from 'next/image';
 
 const AboutUs = () => {
   return (
-    <div className="my-10">
+    <div className="container my-10 ">
       <h1 className="text-[#4A1B9D] text-center text-3xl font-bold">Tentang Kami</h1>
       <p className="text-center text-[#3C3C3C] my-2">Ayo berkenalan dengan orang-orang keren dari pengembang aplikasi Votely</p>
       <div className="flex justify-center my-12">
