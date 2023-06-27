@@ -72,8 +72,8 @@ const Table = () => {
     <>
       {session?.user && !loading ? (
         <div className="relative my-4 overflow-x-auto shadow-md sm:rounded-lg">
-          <table className="w-full text-sm text-left text-[#3C3C3C] dark:text-gray-400">
-            <thead className="text-xs uppercase bg-[#4A1B9D] dark:bg-gray-700 text-white">
+          <table className="w-full text-sm text-left text-[#3C3C3C] ">
+            <thead className="text-xs uppercase bg-[#4A1B9D]  text-white">
               <tr>
                 <th scope="col" className="px-6 py-3">
                   No
