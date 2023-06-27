@@ -138,7 +138,7 @@ const MainPage = () => {
   return (
     <>
       <Navbar />
-      <div className="w-full">
+      <div className="container w-full ">
         <h1 className="text-xl font-normal lg:text-2xl">Buat Vote Baru</h1>
         <p className="text-sm lg:text-base">Untuk membuat voting baru mengharuskan mengisi kotak dibawah ini</p>
         <form onSubmit={handleSubmit} className="w-full">

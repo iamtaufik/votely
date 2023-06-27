@@ -10,8 +10,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="id">
       <body>
         <SessionProvider>
-          <div className="container bg-white">{children}</div>
-          <Footer />
+          <div className="bg-white ">{children}</div>
           <ToastContainer />
         </SessionProvider>
       </body>

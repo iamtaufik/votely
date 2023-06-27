@@ -9,7 +9,7 @@ const Navbar = () => {
   const { data: session } = useSession();
 
   return (
-    <nav className="flex items-center justify-between py-4">
+    <nav className="container flex items-center justify-between py-4 ">
       <Link href="/" className="text-[#4A1B9D] font-bold text-xl">
         Votely
       </Link>
