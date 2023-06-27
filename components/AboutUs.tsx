@@ -32,7 +32,6 @@ const AboutUs = () => {
               </div>
             </div>
           </div>
-
           <div className="group relative max-w-[150px] max-h-[150px] overflow-x-hidden overflow-y-hidden rounded-full ">
             <Image src={Alfa} alt="Alfa Zidan Prasetyo" className="w-full h-full bg-[#4A1B9D] mx-auto transition duration-150 group-hover:opacity-60" />
             <div className="absolute bottom-0 w-full text-white transition duration-150 ease-in scale-0 group-hover:scale-100">
@@ -70,7 +69,6 @@ const AboutUs = () => {
               </div>
             </div>
           </div>
-
           <div className="group relative max-w-[150px] max-h-[150px] overflow-x-hidden overflow-y-hidden rounded-full ">
             <Image src={Okta} alt="Aryawijara" className="w-full h-full bg-[#4A1B9D] mx-auto transition duration-150 group-hover:opacity-60" />
             <div className="absolute bottom-0 w-full text-white transition duration-150 ease-in scale-0 group-hover:scale-100">
