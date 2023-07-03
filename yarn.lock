@@ -1039,6 +1039,11 @@
     "@jridgewell/resolve-uri" "3.1.0"
     "@jridgewell/sourcemap-codec" "1.4.14"
 
+"@kurkle/color@^0.3.0":
+  version "0.3.2"
+  resolved "https://registry.yarnpkg.com/@kurkle/color/-/color-0.3.2.tgz#5acd38242e8bde4f9986e7913c8fdf49d3aa199f"
+  integrity sha512-fuscdXJ9G1qb7W8VdHi+IwRqij3lBkosAm4ydQtEmbY58OzHXqQhvlxqEkoz0yssNVn38bcpRWgA9PP+OGoisw==
+
 "@next/env@13.2.4":
   version "13.2.4"
   resolved "https://registry.yarnpkg.com/@next/env/-/env-13.2.4.tgz#8b763700262b2445140a44a8c8d088cef676dbae"
@@ -1762,6 +1767,13 @@ chalk@^4.0.0, chalk@^4.0.2:
   dependencies:
     ansi-styles "^4.1.0"
     supports-color "^7.1.0"
+
+chart.js@^4.3.0:
+  version "4.3.0"
+  resolved "https://registry.yarnpkg.com/chart.js/-/chart.js-4.3.0.tgz#ac363030ab3fec572850d2d872956f32a46326a1"
+  integrity sha512-ynG0E79xGfMaV2xAHdbhwiPLczxnNNnasrmPEXriXsPJGjmhOBYzFVEsB65w2qMDz+CaBJJuJD0inE/ab/h36g==
+  dependencies:
+    "@kurkle/color" "^0.3.0"
 
 chokidar@^3.5.3:
   version "3.5.3"
@@ -3656,6 +3668,11 @@ randombytes@^2.1.0:
   integrity sha512-vYl3iOX+4CKUWuxGi9Ukhie6fsqXqS9FE2Zaic4tNFD2N2QQaXOMFbuKK4QmDHC0JO6B1Zp41J0LpT0oR68amQ==
   dependencies:
     safe-buffer "^5.1.0"
+
+react-chartjs-2@^5.2.0:
+  version "5.2.0"
+  resolved "https://registry.yarnpkg.com/react-chartjs-2/-/react-chartjs-2-5.2.0.tgz#43c1e3549071c00a1a083ecbd26c1ad34d385f5d"
+  integrity sha512-98iN5aguJyVSxp5U3CblRLH67J8gkfyGNbiK3c+l1QI/G4irHMPQw44aEPmjVag+YKTyQ260NcF82GTQ3bdscA==
 
 react-countdown@^2.3.5:
   version "2.3.5"
