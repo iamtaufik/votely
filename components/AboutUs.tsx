@@ -4,7 +4,7 @@ import Alfa from '@/assets/Alfa.png';
 import Irvan from '@/assets/Irvan.png';
 import Naufal from '@/assets/Naufal.png';
 import Aryawijaya from '@/assets/aryawijaya.png';
-import Okta from '@/assets/Okta.png';
+import Okta from '@/assets/okta.png';
 import Image from 'next/image';
 
 const AboutUs = () => {
