@@ -103,7 +103,7 @@ const MainPage = () => {
     }
 
     try {
-      await axios.post(`${process.env.NODE_ENV !== 'development' ? 'https://lets-votely.vercel.app' : 'http://localhost:3000'}/api/votes`, {
+      await axios.post(`${process.env.NODE_ENV !== 'development' ? 'https://lets-votely.com' : 'http://localhost:3000'}/api/votes`, {
         title,
         startDateTime,
         endDateTime,
