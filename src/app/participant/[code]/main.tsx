@@ -35,7 +35,7 @@ const MainPage = ({ params }: { params: { code: string } }) => {
 
   const getVote = async (code: string) => {
     try {
-      const { data } = await axios.get(`${process.env.NODE_ENV !== 'development' ? 'https://lets-votely.vercel.app' : 'http://localhost:3000'}/api/votes/${code}`);
+      const { data } = await axios.get(`${process.env.NODE_ENV !== 'development' ? 'https://lets-votely.com' : 'http://localhost:3000'}/api/votes/${code}`);
       setVote(data.result);
     } catch (error: any) {
       if (error.response?.data.code === 404) {
@@ -47,7 +47,7 @@ const MainPage = ({ params }: { params: { code: string } }) => {
 
   const getParticipantVote = async (code: string) => {
     try {
-      const { data } = await axios.get(`${process.env.NODE_ENV !== 'development' ? 'https://lets-votely.vercel.app' : 'http://localhost:3000'}/api/participant/${code}`);
+      const { data } = await axios.get(`${process.env.NODE_ENV !== 'development' ? 'https://lets-votely.com' : 'http://localhost:3000'}/api/participant/${code}`);
       if (!data.result) return setIsVote(false);
       setIsVote(true);
     } catch (error: any) {
@@ -72,7 +72,7 @@ const MainPage = ({ params }: { params: { code: string } }) => {
       return;
     }
     try {
-      await axios.post(`${process.env.NODE_ENV !== 'development' ? 'https://lets-votely.vercel.app' : 'http://localhost:3000'}/api/participant`, {
+      await axios.post(`${process.env.NODE_ENV !== 'development' ? 'https://lets-votely.com' : 'http://localhost:3000'}/api/participant`, {
         candidate: selectedOption,
         code: code,
       });

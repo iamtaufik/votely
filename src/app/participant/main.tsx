@@ -22,7 +22,7 @@ const MainPage = () => {
     e.preventDefault();
     setLoading(true);
     try {
-      await axios.get(`${process.env.NODE_ENV !== 'development' ? 'https://lets-votely.vercel.app' : 'http://localhost:3000'}/api/votes/${code}`);
+      await axios.get(`${process.env.NODE_ENV !== 'development' ? 'https://lets-votely.com' : 'http://localhost:3000'}/api/votes/${code}`);
 
       router.push(`/participant/${code}`);
     } catch (error: any) {

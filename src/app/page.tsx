@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   robots: 'index, follow',
   themeColor: { color: '#FFF' },
   manifest: '/manifest.json',
-  icons: { icon: '/icon-192x192.png', apple: "'https://lets-votely.vercel.app/icon-192x192.png'" },
+  icons: { icon: '/icon-192x192.png', apple: "'https://lets-votely.com/icon-192x192.png'" },
 };
 
 export default function Home() {
