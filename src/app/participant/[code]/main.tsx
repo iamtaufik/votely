@@ -10,6 +10,7 @@ import { useSession } from 'next-auth/react';
 import { Vote } from '@/types/vote';
 import Navbar from '@/components/Navbar';
 import Restricted from '@/components/Restricted';
+import DoughnutChart from '@/components/DoughnutChart';
 
 const STATE_NOT_STARTED = 'STATE_NOT_STARTED',
   STATE_STARTED = 'STATE_STARTED',
@@ -117,8 +118,6 @@ const MainPage = ({ params }: { params: { code: string } }) => {
     }
   }, [vote]);
 
-  // if (!vote) return <div>a</div>;
-
   useEffect(() => {
     getVote(String(code));
     getParticipantVote(String(code));
@@ -135,7 +134,7 @@ const MainPage = ({ params }: { params: { code: string } }) => {
             <h2 className="text-3xl font-semibold text-[#3C3C3C]">{vote?.title}</h2>
             {vote?.startDateTime && vote?.endDateTime && <CountDown start={vote?.startDateTime} end={vote?.endDateTime} currentState={currentState} />}
             {isVote && <p className="flex justify-center my-4 py-2 px-4 bg-[#eadeff] text-[#4A1B9D]">Terima kasih sudah melakukan voting</p>}
-            <div className="flex justify-center w-full my-4 lg:w-1/3">
+            <div className={`flex flex-col items-center justify-center w-full gap-10 my-4 ${session?.user?.email === vote?.publisher ? 'lg:w-1/2' : 'lg:w-1/3'} lg:flex-row`}>
               <form onSubmit={handleSubmit} className="flex flex-col w-full gap-4">
                 {vote?.candidates.map((c, index) => (
                   <div key={index} className="flex items-center justify-between px-4 py-2 border border-gray-200 rounded-md ">
@@ -172,6 +171,11 @@ const MainPage = ({ params }: { params: { code: string } }) => {
                   </button>
                 )}
               </form>
+              {session?.user?.email === vote?.publisher && (
+                <div className="h-full w-max">
+                  <DoughnutChart labels={vote?.candidates} title={vote?.title} />
+                </div>
+              )}
             </div>
 
             <div className="w-full lg:w-1/3">{session?.user?.email === vote?.publisher && <p className="px-3 py-2 text-base text-center text-red-600 bg-red-50">Pembuat vote tidak dapat melakukan voting</p>}</div>
