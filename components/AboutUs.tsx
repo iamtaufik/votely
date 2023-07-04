@@ -36,7 +36,7 @@ const AboutUs = () => {
             <Image src={Alfa} alt="Alfa Zidan Prasetyo" className="w-full h-full bg-[#4A1B9D] mx-auto transition duration-150 group-hover:opacity-60" />
             <div className="absolute bottom-0 w-full text-white transition duration-150 ease-in scale-0 group-hover:scale-100">
               <div className="p-2 bg-[#3C3C3C] ">
-                <h1 className="text-sm font-semibold text-center">Alfa Zidan Prasetyo</h1>
+                <h1 className="text-sm font-semibold text-center">Alfa Zidan Prastyo</h1>
                 <p className="pb-2 text-sm text-center text-zinc-400">UI/UX Designer</p>
               </div>
             </div>
